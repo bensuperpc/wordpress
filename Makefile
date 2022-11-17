@@ -38,17 +38,17 @@ all: start
 
 .PHONY: start
 start:
-	docker-compose -f $(COMPOSE_FILE) up -d
+	docker-compose -f $(COMPOSE_FILE) $(PROFILE_CMD) up -d
 
-#start-at:
-#	docker-compose -f $(COMPOSE_FILE) $(PROFILE_CMD) up
+start-at:
+	docker-compose -f $(COMPOSE_FILE) $(PROFILE_CMD) up
 
 .PHONY: stop
 stop: down
 
 .PHONY: down
 down:
-	docker-compose -f $(COMPOSE_FILE) down
+	docker-compose -f $(COMPOSE_FILE) $(PROFILE_CMD) down
 
 .PHONY: restart
 restart: stop start
