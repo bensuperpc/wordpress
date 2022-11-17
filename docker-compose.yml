@@ -63,8 +63,8 @@ services:
     volumes:
       - certbot-etc:/etc/letsencrypt
       - wordpress:/var/www/html
-    #command: certonly --webroot --webroot-path=/var/www/html --email bensuperpc@bensuperpc.fr --agree-tos --no-eff-email --staging -d www.test.bensuperpc.fr -d test.bensuperpc.fr
-    command: certonly --webroot --webroot-path=/var/www/html --email bensuperpc@bensuperpc.fr --agree-tos --no-eff-email --force-renewal -d www.test.bensuperpc.fr -d test.bensuperpc.fr
+    #command: certonly --webroot --webroot-path=/var/www/html --email bensuperpc@bensuperpc.fr --agree-tos --rsa-key-size 4096 --no-eff-email --staging -d www.test.bensuperpc.fr -d test.bensuperpc.fr
+    command: certonly --webroot --webroot-path=/var/www/html --email bensuperpc@bensuperpc.fr --agree-tos --rsa-key-size 4096 --no-eff-email --force-renewal -d www.test.bensuperpc.fr -d test.bensuperpc.fr
 
   pgadmin:
     image: dpage/pgadmin4:latest
