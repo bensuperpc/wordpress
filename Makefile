@@ -27,7 +27,7 @@ COMPOSE_FILE := docker-compose.yml
 
 AUTHOR := bensuperpc
 
-IMAGE_NAME := wordpress:6.1.1-fpm-alpine mysql:8.0.31 nginx:1.23-alpine certbot/certbot:v1.32.0
+IMAGE_NAME := wordpress:6.1.1-php8.1-fpm mysql:8.0.31 nginx:1.23 certbot/certbot:v1.32.0
 
 #IMAGE_AUTHOR := $(addprefix itzg/, $(IMAGE_NAME))
 
@@ -73,4 +73,4 @@ clean:
 
 .PHONY: purge
 purge:
-	docker-compose -f $(COMPOSE_FILE) down -v --rmi all
+	docker-compose -f $(COMPOSE_FILE) $(PROFILE_CMD) down -v --rmi all
