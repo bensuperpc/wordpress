@@ -64,7 +64,7 @@ services:
       - certbot-etc:/etc/letsencrypt
       - wordpress:/var/www/html
     #command: certonly --webroot --webroot-path=/var/www/html --email bensuperpc@bensuperpc.fr --agree-tos --rsa-key-size 4096 --no-eff-email --verbose --noninteractive --staging -d www.bensuperpc.org -d bensuperpc.org
-    #command: certonly --webroot --webroot-path=/var/www/html --email bensuperpc@bensuperpc.fr --agree-tos --rsa-key-size 4096 --no-eff-email --force-renewal -d www.bensuperpc.org -d bensuperpc.org
+    #command: certonly --webroot --webroot-path=/var/www/html --email bensuperpc@bensuperpc.fr --agree-tos --rsa-key-size 4096 --no-eff-email --verbose --force-renewal -d www.bensuperpc.org -d bensuperpc.org
     command: certonly --webroot --webroot-path=/var/www/html --email bensuperpc@bensuperpc.fr --agree-tos --rsa-key-size 4096 --no-eff-email --verbose --noninteractive --keep-until-expiring -d www.bensuperpc.org -d bensuperpc.org
   phpmyadmin:
     image: phpmyadmin:5.2.0-fpm
