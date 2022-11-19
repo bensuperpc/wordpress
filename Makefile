@@ -20,14 +20,14 @@
 
 DOCKER := docker
 
-PROFILE := db wordpress webserver certbot
+PROFILE := db wordpress webserver certbot phpmyadmin
 PROFILE_CMD := $(addprefix --profile ,$(PROFILE))
 
 COMPOSE_FILE := docker-compose.yml
 
 AUTHOR := bensuperpc
 
-IMAGE_NAME := wordpress:6.1.1-php8.1-fpm mysql:8.0.31 nginx:1.23 certbot/certbot:v1.32.0
+IMAGE_NAME := wordpress:6.1.1-php8.1-fpm mysql:8.0.31 nginx:1.23 certbot/certbot:v1.32.0 phpmyadmin:5.2.0-fpm
 
 #IMAGE_AUTHOR := $(addprefix itzg/, $(IMAGE_NAME))
 
