@@ -20,7 +20,7 @@
 
 DOCKER := docker
 
-PROFILE := db wordpress webserver certbot phpmyadmin
+PROFILE := db wordpress webserver certbot phpmyadmin flask
 PROFILE_CMD := $(addprefix --profile ,$(PROFILE))
 
 COMPOSE_FILE := docker-compose.yml
@@ -35,6 +35,10 @@ IMAGE_NAME := wordpress:6.1.1-php8.1-fpm mariadb:10.10.2 nginx:1.23 certbot/cert
 
 .PHONY: build all
 all: start
+
+.PHONY: build
+build:
+	docker-compose -f $(COMPOSE_FILE) $(PROFILE_CMD) build
 
 .PHONY: start
 start:

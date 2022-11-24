@@ -32,6 +32,18 @@ services:
     networks:
       - app-network
 
+  flask_website:
+    build:
+      context: ./flask
+      dockerfile: Dockerfile
+    container_name: flask_website
+    profiles:
+      - flask
+    volumes:
+      - ./flask:/app:rw
+    restart: unless-stopped
+    networks:
+      - app-network
   webserver:
     depends_on:
       - wordpress
